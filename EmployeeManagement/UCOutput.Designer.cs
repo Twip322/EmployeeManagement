@@ -28,29 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(61, 14);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowHeadersWidth = 62;
-            this.dataGridView.RowTemplate.Height = 28;
-            this.dataGridView.Size = new System.Drawing.Size(365, 192);
-            this.dataGridView.TabIndex = 0;
-            // 
-            // UCOutput
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView);
-            this.Name = "UCOutput";
-            this.Size = new System.Drawing.Size(549, 265);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            this.ResumeLayout(false);
+			this.dataGridView = new System.Windows.Forms.DataGridView();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// dataGridView
+			// 
+			this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView.Location = new System.Drawing.Point(2, 2);
+			this.dataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.dataGridView.Name = "dataGridView";
+			this.dataGridView.RowHeadersWidth = 62;
+			this.dataGridView.RowTemplate.Height = 28;
+			this.dataGridView.Size = new System.Drawing.Size(362, 168);
+			this.dataGridView.TabIndex = 0;
+			// 
+			// UCOutput
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.dataGridView);
+			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.Name = "UCOutput";
+			this.Size = new System.Drawing.Size(366, 172);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+			this.ResumeLayout(false);
 
         }
 

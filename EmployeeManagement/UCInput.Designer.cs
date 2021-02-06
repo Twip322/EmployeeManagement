@@ -28,48 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox = new System.Windows.Forms.TextBox();
-            this.checkBox = new System.Windows.Forms.CheckBox();
-            this.textBoxState = new System.Windows.Forms.TextBox();
+            this.textBoxDatePicker = new System.Windows.Forms.TextBox();
+            this.checkBoxNull = new System.Windows.Forms.CheckBox();
+            this.labelInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox
+            // textBoxDatePicker
             // 
-            this.textBox.Location = new System.Drawing.Point(57, 28);
-            this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(208, 26);
-            this.textBox.TabIndex = 0;
-            this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
-            this.textBox.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBoxDatePicker.Location = new System.Drawing.Point(4, 4);
+            this.textBoxDatePicker.Name = "textBoxDatePicker";
+            this.textBoxDatePicker.Size = new System.Drawing.Size(143, 20);
+            this.textBoxDatePicker.TabIndex = 0;
+            this.textBoxDatePicker.TextChanged += new System.EventHandler(this.textBoxDatePicker_TextChanged);
             // 
-            // checkBox
+            // checkBoxNull
             // 
-            this.checkBox.AutoSize = true;
-            this.checkBox.Location = new System.Drawing.Point(312, 30);
-            this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(107, 24);
-            this.checkBox.TabIndex = 1;
-            this.checkBox.Text = "Без даты";
-            this.checkBox.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.checkBox.UseVisualStyleBackColor = true;
+            this.checkBoxNull.AutoSize = true;
+            this.checkBoxNull.Location = new System.Drawing.Point(4, 31);
+            this.checkBoxNull.Name = "checkBoxNull";
+            this.checkBoxNull.Size = new System.Drawing.Size(57, 17);
+            this.checkBoxNull.TabIndex = 1;
+            this.checkBoxNull.Text = "isNull?";
+            this.checkBoxNull.UseVisualStyleBackColor = true;
+            this.checkBoxNull.CheckedChanged += new System.EventHandler(this.checkBoxNull_CheckedChanged);
             // 
-            // textBoxState
+            // labelInfo
             // 
-            this.textBoxState.Location = new System.Drawing.Point(57, 223);
-            this.textBoxState.Name = "textBoxState";
-            this.textBoxState.Size = new System.Drawing.Size(362, 26);
-            this.textBoxState.TabIndex = 2;
-            this.textBoxState.Text = "Cостояние";
+            this.labelInfo.AutoSize = true;
+            this.labelInfo.Location = new System.Drawing.Point(4, 55);
+            this.labelInfo.Name = "labelInfo";
+            this.labelInfo.Size = new System.Drawing.Size(0, 13);
+            this.labelInfo.TabIndex = 2;
             // 
-            // UCInput
+            // ControlDatePicker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBoxState);
-            this.Controls.Add(this.checkBox);
-            this.Controls.Add(this.textBox);
-            this.Name = "UCInput";
-            this.Size = new System.Drawing.Size(525, 325);
+            this.Controls.Add(this.labelInfo);
+            this.Controls.Add(this.checkBoxNull);
+            this.Controls.Add(this.textBoxDatePicker);
+            this.Name = "ControlDatePicker";
+            this.Size = new System.Drawing.Size(150, 91);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -77,8 +76,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox;
-        private System.Windows.Forms.CheckBox checkBox;
-        private System.Windows.Forms.TextBox textBoxState;
+        private System.Windows.Forms.TextBox textBoxDatePicker;
+        private System.Windows.Forms.CheckBox checkBoxNull;
+        private System.Windows.Forms.Label labelInfo;
     }
 }

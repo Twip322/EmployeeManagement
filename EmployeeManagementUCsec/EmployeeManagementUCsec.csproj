@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9493DDC9-2810-4E23-9F0C-39ACEDB01F67}</ProjectGuid>
+    <ProjectGuid>{B25B818C-369F-470B-8591-D477A91ED49B}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>EmployeeManagement</RootNamespace>
-    <AssemblyName>EmployeeManagementUC</AssemblyName>
+    <RootNamespace>EmployeeManagementUCsec</RootNamespace>
+    <AssemblyName>EmployeeManagementUCsec</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -20,7 +20,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,10 +28,16 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,39 +50,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Setting.cs" />
-    <Compile Include="UCInput.cs">
+    <Compile Include="Store.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCInput.Designer.cs">
-      <DependentUpon>UCInput.cs</DependentUpon>
+    <Compile Include="Store.Designer.cs">
+      <DependentUpon>Store.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCOutput.cs">
+    <Compile Include="Excel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCOutput.Designer.cs">
-      <DependentUpon>UCOutput.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCSelect.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include=".Designer.cs">
-      <DependentUpon>UCSelect.cs</DependentUpon>
-      <SubType>UserControl</SubType>
+    <Compile Include="Excel.Designer.cs">
+      <DependentUpon>Excel.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WordSumm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WordSumm.Designer.cs">
+      <DependentUpon>WordSumm.cs</DependentUpon>
+    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UCInput.resx">
-      <DependentUpon>UCInput.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCOutput.resx">
-      <DependentUpon>UCOutput.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCSelect.resx">
-      <DependentUpon>UCSelect.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\EmployeeManagement\EmployeeManagementUC.csproj">
+      <Project>{9493DDC9-2810-4E23-9F0C-39ACEDB01F67}</Project>
+      <Name>EmployeeManagementUC</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

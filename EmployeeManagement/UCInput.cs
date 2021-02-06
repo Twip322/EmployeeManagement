@@ -8,74 +8,67 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace EmployeeManagement
 {
     public partial class UCInput : UserControl
     {
-        public string date { get; private set; }
+        //TODO Передача NULL В DateTime
+        private DateTime _dt;
+        private DateTime _savedInput;
+        private string _example = "Ex: 16/05/2001";
+        private CultureInfo _ci = new CultureInfo("en-US");
 
-        Regex reg = new Regex(@"\d{1,2}/\d{1,2}/\d{4}");
-        public string Result
+        private bool isValid
         {
-            get => Result;
-            set
+            get
             {
-                this.Result = value;
-                textBox.Text = Result;
+                bool b = DateTime.TryParseExact(textBoxDatePicker.Text, "dd/M/yyyy", _ci, DateTimeStyles.None, out _dt);
+                return b;
             }
         }
+
+        public DateTime? Date
+        {
+            get { return isValid ? DateTime.Parse(textBoxDatePicker.Text) : DateTime.Parse(""); }
+            set { textBoxDatePicker.Text = value.ToString(); }
+        }
+
+        public bool isNull { get; set; } = false;
+
         public UCInput()
         {
             InitializeComponent();
+            checkBoxNull.Checked = isNull;
+            labelInfo.Text = _example;
         }
 
-        private void CheckInput()
+        private void checkBoxNull_CheckedChanged(object sender, EventArgs e)
         {
-            if (textBox.Text == "")
+            isNull = checkBoxNull.Checked;
+            textBoxDatePicker.Enabled = !isNull;
+            if (isNull)
             {
-                textBoxState.Text = "Значение не введено";
-                return;
-            }
-            if (textBox.Text == null && checkBox.Checked.Equals(false))
-            {
-                textBoxState.Text = "Значение нулевое";
-                Result = null;
-                return;
-            }
-            string[] test = textBox.Text.Split('/');
-            if(Int32.Parse(test[0])>31 && Int32.Parse(test[1]) > 12 && Int32.Parse(test[2]) > DateTime.Now.Year)
-            {
-                if (reg.Match(textBox.Text).Success)
-                {
-                    Result = textBox.Text;
-                    textBoxState.Text = "Дата введена верно";
-                    return;
-                }
-                else
-                {
-                    Result = null;
-                    textBoxState.Text = "Дата имеет неверный формат";
-                    return;
-                }
+                _savedInput = DateTime.Parse(textBoxDatePicker.Text);
+                Date=DateTime.Parse("");
             }
             else
             {
-                Result = null;
-                textBoxState.Text = "Числа в дате превышают допустимые";
-                return;
+                Date = _savedInput;
             }
-            
         }
 
-        private void textBox_TextChanged(object sender, EventArgs e)
+        private void textBoxDatePicker_TextChanged(object sender, EventArgs e)
         {
-            CheckInput();
-        }
-
-        private void textBox_Enter(object sender, EventArgs e)
-        {
-            CheckInput();
+            if (!isValid)
+            {
+                labelInfo.Text = _example;
+            }
+            else
+            {
+                labelInfo.Text = "nice";
+            }
         }
     }
 }
