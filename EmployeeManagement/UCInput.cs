@@ -14,9 +14,8 @@ namespace EmployeeManagement
 {
     public partial class UCInput : UserControl
     {
-        //TODO Передача NULL В DateTime
         private DateTime _dt;
-        private DateTime _savedInput;
+        private DateTime? _savedInput;
         private string _example = "Ex: 16/05/2001";
         private CultureInfo _ci = new CultureInfo("en-US");
 
@@ -50,8 +49,11 @@ namespace EmployeeManagement
             textBoxDatePicker.Enabled = !isNull;
             if (isNull)
             {
-                _savedInput = DateTime.Parse(textBoxDatePicker.Text);
-                Date=DateTime.Parse("");
+                if (textBoxDatePicker.Text != "")
+                {
+                    _savedInput = DateTime.Parse(textBoxDatePicker.Text);
+                }
+                Date=null;
             }
             else
             {

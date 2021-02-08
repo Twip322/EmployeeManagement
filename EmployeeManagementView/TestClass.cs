@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace EmployeeManagementView
 {
-    class TestClass
+    public class TestClass
     {
-        public int? id { get; set; }
-
-        public string Name { get; set; }
-
-        public DateTime Date { get; set; }
+        public string cellValue { get; set; }
     }
 }

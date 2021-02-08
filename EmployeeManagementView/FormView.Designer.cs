@@ -36,7 +36,6 @@
 			// 
 			// output
 			// 
-			this.output.List = ((System.Collections.Generic.List<object>)(resources.GetObject("output.List")));
 			this.output.Location = new System.Drawing.Point(11, 135);
 			this.output.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.output.Name = "output";
@@ -45,7 +44,6 @@
 			// 
 			// input
 			// 
-			this.input.Date = "";
 			this.input.isNull = false;
 			this.input.Location = new System.Drawing.Point(147, 36);
 			this.input.Name = "input";

@@ -12,27 +12,17 @@ namespace EmployeeManagementView
 {
     public partial class FormView : Form
     {
-        private List<object> _list = new List<object>();
-
+        List<int> tl = new List<int> { 1, 2, 3, 4, 5 };
         public FormView()
         {
             InitializeComponent();
-
-            select.loadList = typeof();
-
+            select.loadList = tl;
             DateTime date = DateTime.Now;
-            for (int i = 0; i < 7; i++)
-            {
-                date = date.AddDays(1);
-                _list.Add(new TestClass()
-                {
-                    id = i,
-                    Name = "IT" + i.ToString(),
-                    Date = date
-                });
-            }
+           
 
-            output.List = _list;
+            output.construct(1,2,new TestClass { cellValue="test"});
+            output.construct(2, 1, new TestClass { cellValue = "test2" });
+            output.construct(2, 3, new TestClass { cellValue = "test3" });
         }
     }
 }
