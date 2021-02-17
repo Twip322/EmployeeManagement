@@ -12,7 +12,7 @@ namespace EM_3_MainLogic.Database
         {
             if (optionsBuilder.IsConfigured == false)
             {
-                optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-MKUOA5O\SQLEXPRESS;Initial Catalog=KOPDatabase;Integrated Security=True;MultipleActiveResultSets=True;");
+                optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-MKUOA5O;Initial Catalog=KOPDatabase;Integrated Security=True;MultipleActiveResultSets=True;");
             }
             base.OnConfiguring(optionsBuilder);
         }

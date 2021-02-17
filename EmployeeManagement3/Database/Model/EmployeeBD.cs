@@ -7,7 +7,7 @@ namespace EM_3_MainLogic.Database.Model
 {
     public class EmployeeBD
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
@@ -15,7 +15,7 @@ namespace EM_3_MainLogic.Database.Model
         [Required]
         public string Patronymic { get; set; }
         [Required]
-        public List<string> Skills { get; set; }
+        public SkillList Skills { get; set; }
         [Required]
         public int WorkExp { get; set; }
     }
