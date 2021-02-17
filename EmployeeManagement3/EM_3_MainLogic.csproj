@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.IO.Packaging">
+      <HintPath>..\ConrtrolsLibraryDlls\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsFormsComponentLibrary">
+      <HintPath>..\ConrtrolsLibraryDlls\WindowsFormsComponentLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsFormsControlLibrary">
+      <HintPath>..\ConrtrolsLibraryDlls\WindowsFormsControlLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

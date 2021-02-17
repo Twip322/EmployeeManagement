@@ -23,6 +23,7 @@ namespace EmployeeManagementView
             output.construct(1,2,new TestClass { cellValue="test"});
             output.construct(2, 1, new TestClass { cellValue = "test2" });
             output.construct(2, 3, new TestClass { cellValue = "test3" });
+            output.clear();
         }
     }
 }

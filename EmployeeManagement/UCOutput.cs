@@ -27,7 +27,20 @@ namespace EmployeeManagement
             dataGridView.Rows[rowNum-1].Cells[columnNum-1].Value = cellObj.GetType().GetProperty("cellValue").GetValue(cellObj);
             dataGridView.Rows.Insert(dataGridView.Rows.Count - 1, 1);
         }
-
+        public int index
+        {
+            get { return dataGridView.CurrentRow.Index; }
+            set { dataGridView.Rows.InsertCopy(dataGridView.CurrentRow.Index, value); }
+        }
+        public object returnObject(object obj)
+        {
+            obj.GetType().GetProperty("cellValue").SetValue(obj, dataGridView.CurrentRow.DataBoundItem);
+            return obj;
+        }
+        public void clear()
+        {
+               dataGridView.Rows.SharedRow(dataGridView.CurrentRow.Index);
+        }
         public UCOutput()
         {
             InitializeComponent();
