@@ -11,6 +11,9 @@ using KDAkop;
 using EM_3_MainLogic.Logic;
 using Unity;
 using PdfSharp.Charting;
+using System.ComponentModel;
+using EM_3_MainLogic.Database.Model;
+using DataLabelType = MigraDoc.DocumentObjectModel.Shapes.Charts.DataLabelType;
 
 namespace EM_3_View
 {
@@ -28,21 +31,21 @@ namespace EM_3_View
         private void MainForm_Load(object sender, EventArgs e)
         {
             var units = unitLogic.Read(null);
-            var cl = new S();
-            var amount = new List<List<int>>();
+            var cl = new EmployeeSkills();
+            var Skills = new List<List<SkillList>>();
             var name = new List<string>();
             foreach (var unit in units)
             {
-                amount.Add(new List<int> { unit.AmountEmployes });
+                Skills.Add(new List<SkillList> { unit.Skills });
                 name.Add(unit.Name);
             }
-            var top = new string[] { "Name", "amount" };
-            exelTable.Create<int>("D:/table.pdf", false, name, amount);
+            var top = new string[] { "Name", "skill" };
+            exelTable.Create<SkillList>("C:/table.pdf", false, name, Skills);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var form = Container.Resolve<FormCreateOrganizationUnit>();
+            var form = Container.Resolve<FormCreateEmployee>();
             form.ShowDialog();
             var unit = unitLogic.Read(null);
         }
@@ -50,7 +53,7 @@ namespace EM_3_View
         private void controlListBox1_Load(object sender, EventArgs e)
         {
             var units = unitLogic.Read(null);
-            controlListBox1.Items.AddRange(new string[] { "Имя\t" + "Колво работников\t\t" + "Тип" });
+            controlListBox1.Items.AddRange(new string[] { "Фамилия\t" + "Навык\t\t" + "Опыт" });
             foreach (var unit in units)
             {
                 var list = new List<String>();
@@ -64,7 +67,7 @@ namespace EM_3_View
         {
             var units = unitLogic.Read(null);
 
-            pdfDiagrammComponent.createPdfDeiagram("D:/diagramm.pdf", units[0], DataLabelType.Percent);
+            pdfDiagrammComponent.createPdfDeiagram("C:/diagramm.pdf", units[0], DataLabelType.Percent);
         }
 
     }

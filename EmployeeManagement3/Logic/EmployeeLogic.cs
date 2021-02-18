@@ -50,12 +50,39 @@ namespace EM_3_MainLogic.Logic
 
         public void Delete(Employee model)
         {
-            throw new NotImplementedException();
+            using (var context = new DataBase())
+            {
+                var unit = context.Employees.FirstOrDefault(rec => rec.Id == model.Id);
+                if (unit != null)
+                {
+                    context.Employees.Remove(unit);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("Элемент не найден");
+                }
+            }
         }
 
-        public List<EmloyeeView> Read(Employee filter)
+        public List<EmployeeView> Read(Employee filter)
         {
-            throw new NotImplementedException();
+            using (var context = new DataBase())
+            {
+                return context.Employees
+                .Where(rec => filter == null || rec.Id == filter.Id)
+                .ToList()
+               .Select(rec => new EmployeeView
+               {
+                   Id = rec.Id,
+                   Name = rec.Name,
+                   Surname = rec.Surname,
+                   Patronymic = rec.Patronymic,
+                   Skills = rec.Skills,
+                   WorkExp = rec.WorkExp
+               })
+               .ToList();
+            }
         }
     }
 }

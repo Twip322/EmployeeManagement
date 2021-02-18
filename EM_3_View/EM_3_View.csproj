@@ -111,16 +111,27 @@
     <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.5.0\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
+    <Reference Include="MigraDoc.DocumentObjectModel, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc.1.50.5147\lib\net20\MigraDoc.DocumentObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.Rendering, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc.1.50.5147\lib\net20\MigraDoc.Rendering.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.RtfRendering, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc.1.50.5147\lib\net20\MigraDoc.RtfRendering.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
+      <HintPath>..\packages\PDFsharp-MigraDoc.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
     </Reference>
     <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
+      <HintPath>..\packages\PDFsharp-MigraDoc.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -183,6 +194,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormCreateEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreateEmployee.Designer.cs">
+      <DependentUpon>FormCreateEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,7 +208,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Skills.cs" />
+    <Compile Include="EmployeeSkills.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -223,6 +243,14 @@
     <ProjectReference Include="..\KDAkop\KDAkop.csproj">
       <Project>{d09bd47c-0139-4f7b-9378-b46cb6ce261f}</Project>
       <Name>KDAkop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\test-DIMON\ClassLibraryControlSelected\NIKITA.csproj">
+      <Project>{fbbbed02-b856-455f-9392-290943a0691d}</Project>
+      <Name>NIKITA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\test-DIMON\Controls\componentsNikitino.csproj">
+      <Project>{31032479-2fc3-4efc-8c08-bce841d9be18}</Project>
+      <Name>componentsNikitino</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

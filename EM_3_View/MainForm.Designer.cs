@@ -39,7 +39,7 @@
             // 
             // buttonAddUnit
             // 
-            this.buttonAddUnit.Location = new System.Drawing.Point(91, 381);
+            this.buttonAddUnit.Location = new System.Drawing.Point(56, 217);
             this.buttonAddUnit.Name = "buttonAddUnit";
             this.buttonAddUnit.Size = new System.Drawing.Size(75, 23);
             this.buttonAddUnit.TabIndex = 0;
@@ -58,7 +58,7 @@
             // 
             // buttonPdfDiagram
             // 
-            this.buttonPdfDiagram.Location = new System.Drawing.Point(473, 217);
+            this.buttonPdfDiagram.Location = new System.Drawing.Point(472, 135);
             this.buttonPdfDiagram.Name = "buttonPdfDiagram";
             this.buttonPdfDiagram.Size = new System.Drawing.Size(75, 23);
             this.buttonPdfDiagram.TabIndex = 2;
@@ -68,13 +68,12 @@
             // 
             // buttonPdfTable
             // 
-            this.buttonPdfTable.Location = new System.Drawing.Point(122, 269);
+            this.buttonPdfTable.Location = new System.Drawing.Point(354, 135);
             this.buttonPdfTable.Name = "buttonPdfTable";
             this.buttonPdfTable.Size = new System.Drawing.Size(75, 23);
             this.buttonPdfTable.TabIndex = 3;
             this.buttonPdfTable.Text = "table";
             this.buttonPdfTable.UseVisualStyleBackColor = true;
-            this.buttonPdfTable.Click += new System.EventHandler(this.buttonPdfTable_Click);
             // 
             // MainForm
             // 

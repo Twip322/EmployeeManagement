@@ -20,7 +20,7 @@ namespace EM_3_View
             var container = BuildUnityContainer();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(container.Resolve<MainForm>());
         }
         private static IUnityContainer BuildUnityContainer()
         {
