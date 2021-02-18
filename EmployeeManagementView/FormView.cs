@@ -12,10 +12,11 @@ namespace EmployeeManagementView
 {
     public partial class FormView : Form
     {
-        List<int> tl = new List<int> { 1, 2, 3, 4, 5 };
+        
         public FormView()
         {
             InitializeComponent();
+            List<int> tl = new List<int> { 1, 2, 3, 4, 5 };
             select.loadList = tl;
             DateTime date = DateTime.Now;
            
