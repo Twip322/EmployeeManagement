@@ -27,10 +27,10 @@ namespace EmployeeManagement
                 return b;
             }
         }
-
+        
         public DateTime? Date
         {
-            get { return isValid ? DateTime.Parse(textBoxDatePicker.Text) : DateTime.Parse(""); }
+            get { return isValid ? DateTime.Parse(textBoxDatePicker.Text) : null ; }
             set { textBoxDatePicker.Text = value.ToString(); }
         }
 

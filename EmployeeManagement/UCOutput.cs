@@ -13,19 +13,25 @@ namespace EmployeeManagement
 {
     public partial class UCOutput : UserControl
     {
-        public void construct(int columnNum, int rowNum, object cellObj)
+        public void insert(int columnNum, int rowNum, object cellObj)
         {
-            
-            while (dataGridView.Columns.Count < columnNum)
-            {
-                dataGridView.Columns.Add("", cellObj.GetType().GetProperty("cellValue").Name);
-            }
             while (dataGridView.Rows.Count < rowNum)
             {
-                dataGridView.Rows.Insert(dataGridView.Rows.Count-1,1);
+                dataGridView.Rows.Insert(dataGridView.Rows.Count - 1, 1);
             }
-            dataGridView.Rows[rowNum-1].Cells[columnNum-1].Value = cellObj.GetType().GetProperty("cellValue").GetValue(cellObj);
-            dataGridView.Rows.Insert(dataGridView.Rows.Count - 1, 1);
+            dataGridView.Rows[rowNum-1].Cells[columnNum-1].Value = cellObj.GetType().GetProperty(dataGridView.Columns[columnNum].HeaderText).GetValue(cellObj);
+        }
+        public void configDataGrid(int columnNum,int[] HeadWidht,bool[] isVisible, object[] obj)
+        {
+            int i = 0;
+            while (dataGridView.Columns.Count < columnNum)
+            {
+                
+                dataGridView.Columns.Add("", obj[i].GetType().GetProperty("cellValue").Name.ToString());
+                dataGridView.Columns[dataGridView.Columns.Count - 1].Width = HeadWidht[i];
+                dataGridView.Columns[dataGridView.Columns.Count-1].Visible=isVisible[i];
+                i++;
+            }
         }
         public int index
         {
