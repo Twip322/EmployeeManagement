@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NIKITA", "test-DIMON\ClassL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "componentsNikitino", "test-DIMON\Controls\componentsNikitino.csproj", "{31032479-2FC3-4EFC-8C08-BCE841D9BE18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patterns", "Patterns\Patterns.csproj", "{E803F1EE-D621-445A-9080-DF273262C9FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{31032479-2FC3-4EFC-8C08-BCE841D9BE18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31032479-2FC3-4EFC-8C08-BCE841D9BE18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31032479-2FC3-4EFC-8C08-BCE841D9BE18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E803F1EE-D621-445A-9080-DF273262C9FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E803F1EE-D621-445A-9080-DF273262C9FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E803F1EE-D621-445A-9080-DF273262C9FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E803F1EE-D621-445A-9080-DF273262C9FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
