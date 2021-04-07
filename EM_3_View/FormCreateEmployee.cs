@@ -1,4 +1,4 @@
-﻿using EM_3_MainLogic.Database.Model;
+﻿using Database;
 using EM_3_MainLogic.Logic;
 using System;
 using System.Collections.Generic;

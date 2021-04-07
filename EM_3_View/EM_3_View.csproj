@@ -111,6 +111,7 @@
     <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.5.0\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MigraDoc.DocumentObjectModel, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
       <HintPath>..\packages\PDFsharp-MigraDoc.1.50.5147\lib\net20\MigraDoc.DocumentObjectModel.dll</HintPath>
     </Reference>
@@ -236,9 +237,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Database\Database.csproj">
+      <Project>{9c7e2e2c-e7f0-4a2a-8e7e-3563a9ea8826}</Project>
+      <Name>Database</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EmployeeManagement3\EM_3_MainLogic.csproj">
       <Project>{00FDE95B-4278-48C2-95E4-1B7A2A565640}</Project>
       <Name>EM_3_MainLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeManagement\EmployeeManagementUC.csproj">
+      <Project>{9493DDC9-2810-4E23-9F0C-39ACEDB01F67}</Project>
+      <Name>EmployeeManagementUC</Name>
     </ProjectReference>
     <ProjectReference Include="..\KDAkop\KDAkop.csproj">
       <Project>{d09bd47c-0139-4f7b-9378-b46cb6ce261f}</Project>

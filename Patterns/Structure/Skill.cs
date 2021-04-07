@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Patterns.Structure
 {
-    class Skill
+    public abstract class Skill
     {
+        public abstract void ImplementedOperation();
     }
 }

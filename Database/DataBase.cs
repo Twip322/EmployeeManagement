@@ -1,10 +1,9 @@
-﻿using EM_3_MainLogic.Database.Model;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace EM_3_MainLogic.Database
+namespace Database
 {
     public class DataBase:DbContext
     {
@@ -12,10 +11,11 @@ namespace EM_3_MainLogic.Database
         {
             if (optionsBuilder.IsConfigured == false)
             {
-                optionsBuilder.UseSqlServer(@"Data Source=WIN-SES2SVHQQ78;Initial Catalog=KOPDatabase;Integrated Security=True;MultipleActiveResultSets=True;");
+                optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-26PMRPM;Initial Catalog=KOPDB;Integrated Security=True;MultipleActiveResultSets=True;");
             }
             base.OnConfiguring(optionsBuilder);
         }
         public virtual DbSet<EmployeeBD> Employees { set; get; }
     }
 }
+

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace EM_3_MainLogic.Migrations
+namespace Database.Migrations
 {
     public partial class init : Migration
     {

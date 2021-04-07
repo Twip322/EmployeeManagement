@@ -30,7 +30,7 @@ namespace EmployeeManagement
         
         public DateTime? Date
         {
-            get { return isValid ? DateTime.Parse(textBoxDatePicker.Text) : null ; }
+            get { return isValid ? DateTime.Parse(textBoxDatePicker.Text) : Date=null ; }
             set { textBoxDatePicker.Text = value.ToString(); }
         }
 

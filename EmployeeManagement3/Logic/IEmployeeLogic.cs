@@ -10,7 +10,7 @@ namespace EM_3_MainLogic.Logic
     {
         void CreateOrUpdate(Employee model);
 
-        List<EmployeeView> Read(Employee filter);
+        List<Employee> Read(Employee filter);
 
         void Delete(Employee model);
 

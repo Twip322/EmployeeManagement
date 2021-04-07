@@ -19,7 +19,6 @@ namespace EmployeeManagementView
             List<int> tl = new List<int> { 1, 2, 3, 4, 5 };
             select.loadList = tl;
             DateTime date = DateTime.Now;
-            output.configDataGrid(1, 30, true, new TestClass { });
             output.insert(1,2,new TestClass { cellValue="test"});
             output.insert(2, 1, new TestClass { cellValue = "test2" });
             output.insert(2, 3, new TestClass { cellValue = "test3" });

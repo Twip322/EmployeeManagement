@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace EM_3_MainLogic.Database.Model
+namespace Database
 {
     public class EmployeeBD
     {

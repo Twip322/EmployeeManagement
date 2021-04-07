@@ -2,10 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using EM_3_MainLogic.Database;
 using System.Linq;
-using EM_3_MainLogic.Database.Model;
 using EM_3_MainLogic.ViewModel;
+using Database;
 
 namespace EM_3_MainLogic.Logic
 {
@@ -65,14 +64,14 @@ namespace EM_3_MainLogic.Logic
             }
         }
 
-        public List<EmployeeView> Read(Employee filter)
+        public List<Employee> Read(Employee filter)
         {
             using (var context = new DataBase())
             {
                 return context.Employees
                 .Where(rec => filter == null || rec.Id == filter.Id)
                 .ToList()
-               .Select(rec => new EmployeeView
+               .Select(rec => new Employee
                {
                    Id = rec.Id,
                    Name = rec.Name,

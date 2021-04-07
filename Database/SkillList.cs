@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EM_3_MainLogic.Database.Model
+namespace Database
 {
     public enum SkillList
     {

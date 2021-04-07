@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Patterns.Behavioral
 {
-    public abstract class Employee
+    public abstract class EmployeeTemplate
     {
         private int WorkExp;
         public abstract void setName();

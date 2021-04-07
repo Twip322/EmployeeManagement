@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Patterns.Structure
 {
-    class WorkEthicSkill
+    public class WorkEthicSkill:Skill
     {
+        public override void ImplementedOperation()
+        {
+        }
     }
 }
